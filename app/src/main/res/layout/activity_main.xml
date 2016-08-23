@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:paddingBottom="15dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1.4">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/summary_color"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/scan_time"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/summary_color"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/scan_actual"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/summary_color"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/network_count"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/summary_color"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/discovery_rate"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/graficar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_vertical">
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="Ver gráficas"
+                android:background="@drawable/chart_area_up"
+                android:padding="5dp"
+                android:clickable="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/summary_color"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold"
+                android:text="Ver Gráficas"
+                android:clickable="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/wifiheader"/>
+
+    <ListView
+        android:id="@+id/wifiListView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="false"
+        android:listSelector="@android:color/white">
+    </ListView>
+
+</LinearLayout>
